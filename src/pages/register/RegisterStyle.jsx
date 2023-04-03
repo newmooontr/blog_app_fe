@@ -11,8 +11,8 @@ background-position: center;
 `;
 
 export const FormContainer= styled(Flex)`
-  width: 40rem;
-  height: 40rem;
+  width: 45rem;
+  height: 50rem;
   max-width: 50rem;
   background:rgba(242, 177, 98, 0.5);/* Color Theme Swatches in Hex */
   border-radius: 50%;
@@ -54,6 +54,8 @@ export const StyledButton = styled.button`
   color: white;
   border: none;
   margin: 1rem;
+  width: 10rem;
+  margin-left: 10rem;
   cursor: pointer;
   &:hover {
     opacity: 0.8;

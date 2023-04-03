@@ -41,7 +41,7 @@ const Register = () => {
   return (
     <RegisterContainer>
       <FormContainer>
-        <Header>{"SIGN UP"}</Header>
+        <Header>{"Sign Up"}</Header>
         <StyledForm onSubmit={handleSubmit}>
          <StyledInput onChange={handleOnInputChange} name='username' placeholder='User Name' type="text"/>
           <StyledInput onChange={handleOnInputChange} name='first_name' placeholder='First Name' type="text"/>
