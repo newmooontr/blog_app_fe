@@ -1,5 +1,7 @@
 import React from 'react'
-import { Link,Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar';
+import { GlobalStyles } from '../components/globalStyle/GlobalStyles';
 
 
 const Layout = () => {
@@ -7,7 +9,7 @@ const Layout = () => {
     <div>
     {/* A "layout route" is a good place to put markup you want to
         share across all the pages on your site, like navigation. */}
-    <nav>
+    {/* <nav>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -30,7 +32,9 @@ const Layout = () => {
           <Link to="/about">About</Link>
         </li>
       </ul>
-    </nav>
+    </nav> */}
+    <GlobalStyles/>
+    <Navbar/>
 
     <hr />
 

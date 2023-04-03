@@ -1,15 +1,14 @@
-import styled from 'styled-components';
-import Flex from '../../components/globalStyle/FlexStyle';
+import styled from 'styled-components'
+import Flex from '../../components/globalStyle/FlexStyle'
 
 
- export const LoginContainer= styled(Flex)`
-  height: 100vh;
-  background-image: url('https://as2.ftcdn.net/v2/jpg/05/17/71/03/1000_F_517710378_oDSteNpClPDdzhiPWhm2TDRIM1tEwInH.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  `;
-
+export const RegisterContainer= styled(Flex)`
+height: 100vh;
+background-image: url('https://as2.ftcdn.net/v2/jpg/05/17/71/03/1000_F_517710378_oDSteNpClPDdzhiPWhm2TDRIM1tEwInH.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+`;
 
 export const FormContainer= styled(Flex)`
   width: 40rem;
@@ -20,11 +19,6 @@ export const FormContainer= styled(Flex)`
   border: 2px solid #e1f1dd;
   padding: 0.5rem;
   flex-direction: column;
-`;
-
-export const StyledImg = styled.img`
-  width: 150px;
-  margin: 1rem;
 `;
 
 export const Header = styled.h1`
@@ -65,10 +59,3 @@ export const StyledButton = styled.button`
     opacity: 0.8;
   }
 `;
-
-export const StyledError = styled.div`
-  color:red;
-  font-weight: bold;
-  text-align: center;
-
-`
