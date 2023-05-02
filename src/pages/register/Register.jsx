@@ -7,8 +7,11 @@ import { FormContainer,
   StyledInput } from './RegisterStyle';
 
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+
+  const navigate = useNavigate()
 
   const [userInfo,setUserInfo] = useState({
     username:"",
@@ -24,10 +27,27 @@ const Register = () => {
 
   const handleSubmit = async (e)=> {
     e.preventDefault();
-    const info = {userInfo};
 
-    const {response} = await axios.post(url, userInfo, {headers:{'Content-Type': 'application/json'}});
-    console.log(response);
+    try {
+      const response = await axios.post(url, userInfo, {headers:{'Content-Type': 'application/json'}});
+      console.log(response);
+      const {data} = response;
+
+      if (data.token) {
+          localStorage.setItem("user", JSON.stringify(data));
+          navigate("/home");
+
+        } else {
+          alert("Bir hata oluştu")
+
+        }
+    } catch (e) {
+        console.log(e);
+    }
+
+
+    
+
 
   }
 

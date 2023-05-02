@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home';
+import Home from '../pages/home/Home';
 import Register from '../pages/register/Register';
 import Login from '../pages/login/Login';
 import Layout from '../pages/Layout';
-import NewBlog from '../pages/NewBlog';
+import NewBlog from '../pages/nevBlog/NewBlog';
 import About from '../pages/about/About';
 import Detail from '../pages/Detail';
 import PrivateRouter from "./PrivateRouter"
