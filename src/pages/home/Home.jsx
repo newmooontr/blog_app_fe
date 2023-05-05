@@ -1,12 +1,14 @@
-import React, {useEffect, navigate, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import axios from "axios"
 
 import PostBase from '../../components/posts/PostBase';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
   const [posts, setPosts]= useState([]);
+  const navigate = useNavigate();
 
   const url = "http://127.0.0.1:8000/blog/posts/";
 
@@ -17,14 +19,7 @@ const Home = () => {
       console.log(data);
       setPosts(data)
     }
-    const user = localStorage.getItem("user");
-    console.log('here');
-    if (!user) {
-      navigate("login");
-    } else {
-     fetchData();
-    }
-  
+    fetchData();
   }, []);
   
 
@@ -33,7 +28,7 @@ const Home = () => {
     <>
       {
         posts.map((post,index) =>
-        <PostBase post={post} index={index}/>
+        <PostBase key={index} post={post} index={index} setPosts={setPosts}/>
         )
       }
     </>

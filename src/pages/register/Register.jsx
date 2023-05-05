@@ -8,10 +8,12 @@ import { FormContainer,
 
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import useAuthService  from '../../common/auth/AuthService';
 
 const Register = () => {
 
   const navigate = useNavigate()
+  const authService = useAuthService()
 
   const [userInfo,setUserInfo] = useState({
     username:"",
@@ -29,12 +31,12 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(url, userInfo, {headers:{'Content-Type': 'application/json'}});
+      const response = await axios.post(url, userInfo, {headers:{'Content-Type': 'application/json' }});
       console.log(response);
       const {data} = response;
 
       if (data.token) {
-          localStorage.setItem("user", JSON.stringify(data));
+          authService.setUser(data);
           navigate("/home");
 
         } else {

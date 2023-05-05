@@ -1,12 +1,14 @@
 import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
+import useAuthService from '../common/auth/AuthService';
 
 const PrivateRouter = () => {
-const user = true;
-
+  const authService = useAuthService();
+  const user = authService.getUser();
+  console.log(user);
   return (
     <div>
-        {user ? <Outlet/> : <Navigate to= "/login"/>}
+        {user ? <Outlet/> :  <Navigate to="/login"/>}
     </div>
   )
 }

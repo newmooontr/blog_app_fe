@@ -1,22 +1,97 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { NewBlogContainer,
+  FormNewBlog,
+  Header,
+  StyledButton, 
+  StyledForm, 
+  StyledInput } from './NewBlogStyle';
+import axios from "axios";
+import useAuthService  from '../../common/auth/AuthService';
+
 
 const NewBlog = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const auth = useAuthService();
+
+  const [newBlog,setNewBlog] = useState({
+    title:"",
+    content:"",
+    image: "https://cdn.pixabay.com/photo/2023/02/10/08/00/woman-7780330_640.png",
+    is_publish: true
+  
+  });
+
+  const [user, setUser] =useState()
+  const [checked, setChecked]=useState(true)
+
+  const url = "http://127.0.0.1:8000/blog/posts/";
+
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    console.log(newBlog);
+    try {
+      const response = await axios.post(url, newBlog, 
+         {headers:{'Content-Type': 'application/json', 'Token': user.token }});
+       console.log(response);
+       const {data} = response;
+       //const data={};
+      if (data.token) {
+        
+      } else {
+        alert("Bir hata oluştu")
+
+      }
+    } catch (e) {
+        console.log(e);
+    }
+
+
+  }
+
+  const handleChecked=()=>{
+    setNewBlog({...newBlog, is_publish: !checked});
+    setChecked(!checked);
+   
+  }
+
+  const handleOnInputChange = (e)=>{
+    e.preventDefault();
+
+    setNewBlog({...newBlog, [e.target.name]:e.target.value});
+
+  }
+
+
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
+    const storedUser = auth.getUser();
 
-    if (!user) {
+    if (!storedUser) {
       navigate("login")
+    } else {
+      setUser(storedUser)
     }
     
 
   }, [])
   
   return (
-    <div>NewBlog</div>
+      <NewBlogContainer>
+      <FormNewBlog>
+        <Header>{"New Blog"}</Header>
+        <StyledForm onSubmit={handleSubmit}>
+         <StyledInput onChange={handleOnInputChange} name='title' placeholder='Title' type="text"/>
+          <StyledInput onChange={handleOnInputChange} name='image' placeholder='Image URL' type="text"/>
+          <StyledInput onChange={handleOnInputChange} name='content' placeholder='Content' type="text"/>
+          <StyledInput type= "checkbox" id="publish" name= "is_publish" checked={checked} onChange={handleChecked}/>
+          <label htmlFor="publish">Published</label>
+          <StyledButton type='submit'>NEW BLOG</StyledButton>
+        </StyledForm>
+      </FormNewBlog>
+      </NewBlogContainer>
+
   )
 }
 

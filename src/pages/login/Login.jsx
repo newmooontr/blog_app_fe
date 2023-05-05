@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
 import {
   FormContainer,
   Header,
@@ -12,9 +11,12 @@ import {
 } from "./LoginStyle";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import useAuthService from '../../common/auth/AuthService';
 
 const Login = () => {
   const navigate = useNavigate();
+  const authService = useAuthService()
+
 
 
   const [userInfo,setUserInfo]=useState({username:"", password:""});
@@ -40,9 +42,18 @@ const Login = () => {
     const info = {userInfo};
     if (userInfo.username.length > 2 && userInfo.password.length > 2){
       
-      const {response} = await axios.post(url,userInfo, {headers:{'Content-Type': 'application/json'}});
+      const {data} = await axios.post(url,userInfo, {headers:{'Content-Type': 'application/json'}});
 
-      console.log(response);
+      console.log(data);
+
+      if (data.token) {
+        authService.setUser(data)
+        navigate("/home");
+
+      } else {
+        alert("Bir hata oluştu")
+
+      }
 
     } else {
       setErrorMessage("Username and password at least 3 characters")
