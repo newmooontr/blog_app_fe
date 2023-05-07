@@ -6,7 +6,7 @@ import Login from '../pages/login/Login';
 import Layout from '../pages/Layout';
 import NewBlog from '../pages/nevBlog/NewBlog';
 import About from '../pages/about/About';
-import Detail from '../pages/Detail';
+import Detail from '../pages/detail/Detail';
 import PrivateRouter from "./PrivateRouter"
 
 const AppRouter = () => {

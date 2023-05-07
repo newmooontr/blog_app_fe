@@ -78,11 +78,11 @@ const postClickHandler =()=>{
 
     <CardImage src={post.image} /> 
     <Header>{post.title}</Header>
-    <Text>{post.content}</Text>
+    <Text>{post.content.substr(0, 200)}...</Text>
     <Text>{post.created_date.replace(/,/g, '/')}</Text>
 
     <>
-    <FaUserCircle/>{post.author}
+    <FaUserCircle />{post.author}
     </>
    
     <StyledIconImgWrapper>

@@ -33,12 +33,12 @@ const NewBlog = () => {
     console.log(newBlog);
     try {
       const response = await axios.post(url, newBlog, 
-         {headers:{'Content-Type': 'application/json', 'Token': user.token }});
+         {headers:{'Content-Type': 'application/json', 'Authorization': 'Token ' + user.token }});
        console.log(response);
        const {data} = response;
        //const data={};
-      if (data.token) {
-        
+      if (data.id) {
+        navigate('/home')
       } else {
         alert("Bir hata oluştu")
 
@@ -84,7 +84,7 @@ const NewBlog = () => {
         <StyledForm onSubmit={handleSubmit}>
          <StyledInput onChange={handleOnInputChange} name='title' placeholder='Title' type="text"/>
           <StyledInput onChange={handleOnInputChange} name='image' placeholder='Image URL' type="text"/>
-          <StyledInput onChange={handleOnInputChange} name='content' placeholder='Content' type="text"/>
+          <textarea onChange={handleOnInputChange} name='content' placeholder='Content' type="text"/>
           <StyledInput type= "checkbox" id="publish" name= "is_publish" checked={checked} onChange={handleChecked}/>
           <label htmlFor="publish">Published</label>
           <StyledButton type='submit'>NEW BLOG</StyledButton>
