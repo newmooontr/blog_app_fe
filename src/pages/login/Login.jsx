@@ -68,7 +68,7 @@ const Login = () => {
   return (
     <LoginContainer>
       <FormContainer>
-        <Header>{"SİNOP"}</Header>
+        <Header>{"Lütfen Giriş Yapın"}</Header>
         <StyledForm onSubmit={handleSubmit}>
           <StyledInput onChange={handleOnInputChange} name="username" placeholder="Enter Username" type="text" />
           <StyledInput onChange={handleOnInputChange} name="password" type="password" placeholder="Enter Password" />

@@ -5,6 +5,8 @@ import axios from "axios"
 import PostBase from '../../components/posts/PostBase';
 import { useNavigate } from 'react-router-dom';
 
+import { StyledCardList } from './HomeStyle';
+
 const Home = () => {
 
   const [posts, setPosts]= useState([]);
@@ -25,13 +27,13 @@ const Home = () => {
 
 
   return (
-    <>
+    <StyledCardList>
       {
         posts.map((post,index) =>
         <PostBase key={index} post={post} index={index} setPosts={setPosts}/>
         )
       }
-    </>
+    </StyledCardList>
     )
 }
 

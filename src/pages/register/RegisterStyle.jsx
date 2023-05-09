@@ -3,29 +3,29 @@ import Flex from '../../components/globalStyle/FlexStyle'
 
 
 export const RegisterContainer= styled(Flex)`
-height: 100vh;
-background-image: url('https://as2.ftcdn.net/v2/jpg/05/17/71/03/1000_F_517710378_oDSteNpClPDdzhiPWhm2TDRIM1tEwInH.jpg');
+height: 90vh;
+background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
 `;
 
 export const FormContainer= styled(Flex)`
-  width: 45rem;
-  height: 50rem;
-  max-width: 50rem;
-  background:rgba(242, 177, 98, 0.5);/* Color Theme Swatches in Hex */
-  border-radius: 50%;
-  border: 2px solid #e1f1dd;
-  padding: 0.5rem;
+  width: 30rem;
+  min-height: 400px;
+  background:rgba(255, 255, 255, 0.1);/* Color Theme Swatches in Hex */
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 3px 3px 20px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
   flex-direction: column;
 `;
 
 export const Header = styled.h1`
-  color: black;
-  font-size: 3rem;
+  color:#3C3939;
+  font-size: 1.5rem;
+  text-align: center;
   
-
 `;
 
 export const StyledForm = styled.form`
@@ -36,10 +36,11 @@ export const StyledForm = styled.form`
 
 export const StyledInput = styled.input`
   height: 3rem;
-  font-size: 2rem;
+  font-size: 1rem;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.6);
-  border: none;
+  background: transparent;
+  border: 1px #3d3939 solid;
+  border-radius: 8px;
   color: white;
   margin: 1rem;
   text-indent: 1rem;
@@ -48,14 +49,15 @@ export const StyledInput = styled.input`
 
 export const StyledButton = styled.button`
 
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.6);
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px;
+  background: #76D7C4;
   border-radius: 5px;
-  color: white;
+  color: #e5e0e0;
   border: none;
   margin: 1rem;
-  width: 10rem;
-  margin-left: 10rem;
   cursor: pointer;
   &:hover {
     opacity: 0.8;

@@ -63,7 +63,7 @@ const Register = () => {
   return (
     <RegisterContainer>
       <FormContainer>
-        <Header>{"Sign Up"}</Header>
+        <Header>{"Create Account"}</Header>
         <StyledForm onSubmit={handleSubmit}>
          <StyledInput onChange={handleOnInputChange} name='username' placeholder='User Name' type="text"/>
           <StyledInput onChange={handleOnInputChange} name='first_name' placeholder='First Name' type="text"/>
@@ -71,7 +71,7 @@ const Register = () => {
           <StyledInput onChange={handleOnInputChange} name='email' placeholder='E-Mail' type="text"/>
           <StyledInput onChange={handleOnInputChange} name='password' placeholder='Password' type="password"/>
           <StyledInput onChange={handleOnInputChange} name='password2' placeholder='Confirm Password' type="password"/>
-          <StyledButton type='submit'>Register</StyledButton>
+          <StyledButton type='submit'>Sign Up</StyledButton>
         </StyledForm>
       </FormContainer>
     </RegisterContainer>

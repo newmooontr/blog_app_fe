@@ -1,7 +1,7 @@
 import React from 'react'
 import Flex from  '../../components/globalStyle/FlexStyle'
 import { AboutContainer, Header, StyledImg, Text,StyledIconImgWrapper } from './AboutStyle'
-import fener from "../../assets/fener.png"
+import computer from "../../assets/computer.jpeg"
 import { AiOutlineTwitter, AiOutlineInstagram} from "react-icons/ai";
 
 
@@ -9,9 +9,9 @@ import { AiOutlineTwitter, AiOutlineInstagram} from "react-icons/ai";
 const About = () => {
   return (
     <AboutContainer>
-      <Header>{"Sinop"}</Header>
-      <Text>{"Karadenizin İncisi"}</Text>
-      <StyledImg src={fener}/>
+      <Header>{"NewMoon"}</Header>
+      <Text>{"Full Stack Developer"}</Text>
+      <StyledImg src={computer}/>
 
       <StyledIconImgWrapper>
         <AiOutlineInstagram type="button"/>

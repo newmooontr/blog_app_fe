@@ -112,31 +112,35 @@ const Detail = () => {
         <>
           <Image src={post.image} />
           <StyledUser>
-            <FaUserCircle />
-            {post.author}
+            <FaUserCircle  style={{color:'red'}}/>
+            <div>
+              <div>{post.author}</div>
+              <div>{post.created_date}</div>
+            </div>
+           
           </StyledUser>
           <Header>{post.title}</Header>
           <StyledText> {post.content}</StyledText>
 
           <StyledIconImgWrapper>
-            <>
+            <div>
               <AiOutlineHeart
                 style={{ color: isLiked ? "red" : "black" }}
                 onClick={likeHandler}
                 type="button"
               />
-              {post.like_count}
-            </>
+              <div>{post.like_count}</div>
+            </div>
 
-            <>
+            <div>
               <BsChatLeftText onClick={commentHandler} type="button" />
               {post.comments.length}
-            </>
+            </div>
 
-            <>
+            <div>
               <AiOutlineEye type="button" />
               {post.visit_count}
-            </>
+            </div>
           </StyledIconImgWrapper>
           <div>
             {commentToggle && (
