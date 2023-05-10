@@ -51,18 +51,19 @@ export const MenuAvatar = styled(Link)`
     position: absolute;
     display: block;
     font-size: medium;
-    width: 100px;
-    height: 80px;
+    width: 130px;
+    height: 100px;
     right: 0px;
     top: 85px;
     background:rgba(255, 255, 255, 0.1);/* Color Theme Swatches in Hex */
     margin: auto;
-    border-radius: 15px;
+    border-radius: 10px;
+    padding: 10px;
     box-shadow: 3px 3px 20px 10px rgba(0, 0, 0, 0.2);
 
     ul {
       list-style-type: none;
-      line-height: 25px;
+      line-height: 28px;
      
   
 

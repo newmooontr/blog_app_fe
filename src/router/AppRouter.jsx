@@ -7,7 +7,8 @@ import Layout from '../pages/Layout';
 import NewBlog from '../pages/nevBlog/NewBlog';
 import About from '../pages/about/About';
 import Detail from '../pages/detail/Detail';
-import PrivateRouter from "./PrivateRouter"
+import PrivateRouter from "./PrivateRouter";
+import Login2 from '../pages/login/Login2';
 
 const AppRouter = () => {
   return (
@@ -15,7 +16,7 @@ const AppRouter = () => {
           <Route path="/" element={<Layout/>}>
             <Route path="home" element={<Home/>}/>
             <Route path="register" element={<Register/>}/>
-            <Route path="login" element={<Login/>}/>  
+            <Route path="login" element={<Login2/>}/>  
             <Route path="detail/:postId" element={<PrivateRouter/>}>
                 <Route path="" element={<Detail/>}/> 
             </Route>

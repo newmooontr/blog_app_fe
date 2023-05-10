@@ -84,9 +84,12 @@ const NewBlog = () => {
         <StyledForm onSubmit={handleSubmit}>
          <StyledInput onChange={handleOnInputChange} name='title' placeholder='Title' type="text"/>
           <StyledInput onChange={handleOnInputChange} name='image' placeholder='Image URL' type="text"/>
-          <textarea onChange={handleOnInputChange} name='content' placeholder='Content' type="text"/>
-          <StyledInput type= "checkbox" id="publish" name= "is_publish" checked={checked} onChange={handleChecked}/>
-          <label htmlFor="publish">Published</label>
+          <textarea style={{width:"420px",height:"85px",fontWeight:"bold"}} onChange={handleOnInputChange} name='content' placeholder='Content' type="text"/>
+          <div style={{display:"flex"}}>
+            <StyledInput type= "checkbox" id="publish" name= "is_publish" checked={checked} onChange={handleChecked}/>
+            <label style={{display:"flex", fontSize:"15px",marginTop:"31px"}} htmlFor="publish">Published</label>
+          </div>
+          
           <StyledButton type='submit'>NEW BLOG</StyledButton>
         </StyledForm>
       </FormNewBlog>

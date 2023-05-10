@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Flex from '../../components/globalStyle/FlexStyle';
+import { Field,Form,ErrorMessage } from 'formik';
 
 
  export const LoginContainer= styled.div`
@@ -23,10 +24,6 @@ export const FormContainer= styled(Flex)`
   flex-direction: column;
 `;
 
-export const StyledImg = styled.img`
-  width: 150px;
-  margin: 1rem;
-`;
 
 export const Header = styled.h1`
   color:#3C3939;
@@ -35,20 +32,20 @@ export const Header = styled.h1`
 
 `;
 
-export const StyledForm = styled.form`
+export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
 `;
 
 
-export const StyledInput = styled.input`
+export const StyledInput = styled(Field)`
   height: 3rem;
   font-size: 1rem;
   border-radius: 5px;
   background: transparent;
   border: 1px #3d3939 solid;
   border-radius: 8px;
-  color: white;
+  color: black;
   margin: 1rem;
   text-indent: 1rem;
 `;
@@ -70,9 +67,11 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const StyledError = styled.div`
+export const StyledError = styled(Form)`
   color:red;
   font-weight: bold;
   text-align: center;
+  font-size: medium;
 
 `
+

@@ -9,7 +9,8 @@ import Nav, {
 } from "../Navbar/Navbar.style";
 import useAuthService from "../../common/auth/AuthService";
 import { FaUserCircle } from "react-icons/fa";
-import { GiQueenCrown } from "react-icons/gi";
+import { GiQueenCrown, GiLogging } from "react-icons/gi";
+import { FiLogIn } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -66,7 +67,7 @@ const Navbar = () => {
           )}
         </MenuAvatar>
       ) : (
-        <MenuLink to="login">Login</MenuLink>
+        <MenuLink to="login"> <FiLogIn/></MenuLink>
       )}
     </Header>
   );
