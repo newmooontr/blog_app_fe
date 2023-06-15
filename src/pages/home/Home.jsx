@@ -12,10 +12,10 @@ const Home = () => {
   const [posts, setPosts]= useState([]);
   const navigate = useNavigate();
 
+
   const url = "http://127.0.0.1:8000/blog/posts/";
 
   useEffect(() => {
-
     const fetchData = async ()=> {
       const {data} = await axios.get(url, {headers:{'Content-Type': 'application/json'}});
       console.log(data);

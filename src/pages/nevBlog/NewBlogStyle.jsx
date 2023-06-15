@@ -50,6 +50,18 @@ export const StyledInput = styled.input`
 `;
 
 
+export const StyledTextarea = styled.textarea`
+ 
+  font-size: 1rem;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px #3d3939 solid;
+  border-radius: 8px;
+  color: black;
+  margin: 1rem;
+  text-indent: 1rem;
+`;
+
 export const StyledButton = styled.button`
 
   font-size: 1.2rem;

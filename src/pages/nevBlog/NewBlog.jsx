@@ -6,7 +6,8 @@ import { NewBlogContainer,
   Header,
   StyledButton, 
   StyledForm, 
-  StyledInput } from './NewBlogStyle';
+  StyledInput,
+  StyledTextarea} from './NewBlogStyle';
 import axios from "axios";
 import useAuthService  from '../../common/auth/AuthService';
 
@@ -84,7 +85,7 @@ const NewBlog = () => {
         <StyledForm onSubmit={handleSubmit}>
          <StyledInput onChange={handleOnInputChange} name='title' placeholder='Title' type="text"/>
           <StyledInput onChange={handleOnInputChange} name='image' placeholder='Image URL' type="text"/>
-          <textarea style={{width:"420px",height:"85px",fontWeight:"bold"}} onChange={handleOnInputChange} name='content' placeholder='Content' type="text"/>
+          <StyledTextarea onChange={handleOnInputChange} name='content' placeholder='Content' type="text" rows="7"/>
           <div style={{display:"flex"}}>
             <StyledInput type= "checkbox" id="publish" name= "is_publish" checked={checked} onChange={handleChecked}/>
             <label style={{display:"flex", fontSize:"15px",marginTop:"31px"}} htmlFor="publish">Published</label>
